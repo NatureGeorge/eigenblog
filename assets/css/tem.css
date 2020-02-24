@@ -1,0 +1,9 @@
+.circle {
+  width:100%;
+  background-image: radial-gradient(#d1d6d3, #e5eee9);
+  border-style: none;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}

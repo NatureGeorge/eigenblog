@@ -1,12 +1,15 @@
-# Welcome to `eigenblog`
+---
+layout: default
+---
 
-<ul class="nav navbar-nav">
-    <li><a href="/">About</a></li>
-    <li><a href="/projects.html">Projects</a></li>
-    <li><a href="/blog.html">Blog</a></li>
-    <li><a href="https://github.com/NatureGeorge">Github</a></li>
-    <li><a href="https://stackoverflow.com/users/story/12876491">Stack Overflow</a></li>
-</ul>
+# Welcome to EigenBlog
+
+* [About](./)
+* [Projects](./projects.html)
+* [Blog](./blog.html)
+* [Github](https://github.com/NatureGeorge)
+* [Stack Overflow](https://stackoverflow.com/users/story/12876491)
+
 
 ## About Me
 

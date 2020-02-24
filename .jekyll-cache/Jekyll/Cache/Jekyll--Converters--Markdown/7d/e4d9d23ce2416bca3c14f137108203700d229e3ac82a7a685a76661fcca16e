@@ -1,0 +1,51 @@
+I"j<h2 id="welcome-to-my-blog">Welcome to my blog</h2>
+
+<p>Noted that these could be <strong><em>error-prone</em></strong> since one’s understanding changes over time with the accumulation of a gradual process gaining knowledge/information.</p>
+
+<h3 id="introduction-to-shannon-entropy">✅<a href="./blog/shannon_entropy.html">Introduction to Shannon Entropy</a></h3>
+
+<p><em>01 Feb 2020</em></p>
+
+<blockquote>
+  <p>A personal summary of shannon entropy.</p>
+</blockquote>
+
+<h3 id="introduction-to-python-asyncawait">✅<a href="./blog/async.html">Introduction to Python async/await</a></h3>
+
+<p><em>04 Dec 2019</em></p>
+
+<blockquote>
+  <p>This post contains some of my insights on asynchronous programming in Python(&gt;=3.7).</p>
+</blockquote>
+
+<h3 id="relationship-between-biological-assembly-and-asymmetric-unit-in-mmcif-format-files">⛔<a href="./blog/biounit.html">Relationship Between Biological Assembly and Asymmetric Unit in mmCIF Format Files</a></h3>
+
+<p><em>09 Sep 2019</em></p>
+
+<blockquote>
+  <p>In this note, I put some examples of different types of oligomeric and try to figure out the relationship between <strong><em>Biological Assembly</em></strong> and <strong><em>Asymmetric</em></strong> Unit in mmCIF-format Files.</p>
+</blockquote>
+
+<h3 id="feactures-of-mapping-between-refseq-and-uniprot">✅<a href="./blog/refseq_unp.html">Feactures of Mapping Between RefSeq and UniProt</a></h3>
+
+<p><em>21 Aug 2019</em></p>
+
+<blockquote>
+  <p>There are some sepcial cases in the mapping.</p>
+</blockquote>
+
+<h3 id="about-finding-the-insertion--deletion-info-of-pdb">⛔<a href="./blog/indel.html">About Finding the Insertion &amp; Deletion Info of PDB</a></h3>
+
+<p><em>19 May 2019</em></p>
+
+<blockquote>
+  <p>The process to detect insertion and deletion in PDB.</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>⛔ for <em>out of date</em></li>
+  <li>✅ for <em>currently pass</em></li>
+</ul>
+:ET
