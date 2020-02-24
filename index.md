@@ -16,3 +16,20 @@ layout: default
 I'm an undergraduate student at Soochow University(PRC) major in Bioinformatics/Computational Biology since 2017. 
 
 Currently, I am working on programming and have a thirst for the insight of mathematic modeling, modern statistic and pattern recognition. My involvement in science lays in the study of the effect of mutations on protein 3D structure.
+
+<table>
+    <tr>
+        <td>
+            <img src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106436.svg"/>
+        </td>
+        <td>
+            <img src="https://www.flaticon.com/premium-icon/icons/svg/2574/2574573.svg"/>
+        </td>
+        <td>
+            <img src="https://image.flaticon.com/icons/svg/1998/1998695.svg"/>
+        </td>
+    </tr>
+</table>
+
+
+
