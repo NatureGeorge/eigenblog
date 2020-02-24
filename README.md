@@ -1,5 +1,13 @@
 # Welcome to `eigenblog`
 
+<ul class="nav navbar-nav">
+    <li><a href="/">About</a></li>
+    <li><a href="/projects.html">Projects</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="https://github.com/NatureGeorge">Github</a></li>
+    <li><a href="https://stackoverflow.com/users/story/12876491">Stack Overflow</a></li>
+</ul>
+
 ## About Me
 
 I'm an undergraduate student at Soochow University(PRC) major in Bioinformatics/Computational Biology since 2017. 
