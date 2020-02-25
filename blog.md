@@ -22,6 +22,14 @@ a{
 
 Noted that these could be ***error-prone*** since one's understanding changes over time with the accumulation of a gradual process gaining knowledge/information.
 
+### ✅Introduction to LOWESS Smoothing
+
+_25 Feb 2020_
+
+> A personal summary of LOWESS Smoothing.
+
+<div class="viewFullText"><a href="./blog/lowess.html">📔 View the full text</a></div>
+
 ### ✅Introduction to Shannon Entropy
 
 _01 Feb 2020_
