@@ -57,10 +57,10 @@ NP_001002029              FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDLSPVIHRSMQGGLVG
     </tr>
     <tr>
         <td>
-            <div id="viewport1" style="width:235px; height:150px;"></div>
+            <div id="viewport1" style="width:20em; height:15em;"></div>
         </td>
         <td>
-            <div id="viewport2" style="width:235px; height:150px;"></div>
+            <div id="viewport2" style="width:20em; height:15em;"></div>
         </td>
     </tr>
 </table>
