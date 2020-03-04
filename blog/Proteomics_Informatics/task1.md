@@ -1,6 +1,6 @@
 ---
 layout: default
-data: 2020-02-28
+date: 2020-02-28
 author: Zefeng Zhu
 ---
 
@@ -140,7 +140,7 @@ a.make()
 
 #### Another way to build the model: SWISS-MODEL auto-modelling
 
-![fig_SWISS-MODEL_2019-nCoV](../../assets/img/fig_SWISS-MODEL_2019-nCoV.png)
+![fig_SWISS-MODEL_2019-nCoV](../../assets/img/fig_SWISS-MODEL_2019-nCov.png)
 
 ![fig_SWISS-MODEL_2019-nCoV_result](../../assets/img/fig_SWISS-MODEL_result.png)
 

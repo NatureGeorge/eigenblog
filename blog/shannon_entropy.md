@@ -1,5 +1,6 @@
 ---
 layout: default
+date: 2020-02-01
 ---
 
 # Introduction to Shannon Entropy
