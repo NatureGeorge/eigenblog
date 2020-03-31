@@ -3,3 +3,5 @@ theme: jekyll-theme-minimal
 title: EigenBlog
 description: Books are trivialities, life alone is great.
 markdown: kramdown
+plugins:
+  - jekyll-diagrams
