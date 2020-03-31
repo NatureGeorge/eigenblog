@@ -156,7 +156,10 @@ D03|逸夫
 * table without primary key(joint table) to edge with properties
 * table with primary key to node
 
-{% graphviz %}
+![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2FNatureGeorge%2Feigenblog%2Fmaster%2Fblog%2FDataBase%2Ffunctional_dependency.md)
+<details> 
+<summary></summary>
+custom_mark10
 digraph graphDB {
 	size="6,4"; ratio = fill;
   edge [color="0.700 0.200 1.000"];
@@ -167,7 +170,8 @@ digraph graphDB {
   Dept -> Student[label="HAS_STUDENT"];
   Student -> Class[label="HAS_CLASS\n{G: value}"];
 }
-{% endgraphviz %}
+custom_mark10
+</details>
 
 ### Show Data
 
