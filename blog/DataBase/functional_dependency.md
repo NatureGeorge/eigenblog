@@ -33,7 +33,7 @@ $\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y\subset X\,\,\, \text{then}\,\,\,\
 
 ## Non-trivial function dependency
 
-$\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y ot\subset X\,\,\, \text{then}\,\,\,\text{Non-trivial function dependency}$
+$\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y \not\subset X\,\,\, \text{then}\,\,\,\text{Non-trivial function dependency}$
 
 ## Partial/Full function dependency
 
@@ -41,7 +41,7 @@ $\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y ot\subset X\,\,\, \text{then}\,\,
 
 ## Transfer function dependency
 
-$X\rightarrow Y \And Y  ot\rightarrow X \And Y\rightarrow Z$
+$X\rightarrow Y \And Y  \not\rightarrow X \And Y\rightarrow Z$
 
 ## Example
 
@@ -64,7 +64,7 @@ $X\rightarrow Y \And Y  ot\rightarrow X \And Y\rightarrow Z$
 
 * 关系模式R中所有属性都是不可分的基本数据项，即不能以集合、序列作为属性值
 * 1NF是关系模式最起码的要求
-* 若$R ot\in 1NF$，则R不是关系数据库
+* 若$R \not\in 1NF$，则R不是关系数据库
 
 S@|SN|SD|DEAN|C@|G
 -|-|-|-|-|-
@@ -108,7 +108,7 @@ $S\_SD(S@, SN, SD, DEAN)$:
 * $S@\rightarrow^{f}DEAN$
 
 S@|SN|SD|DEAN
--|-|-|-|-
+-|-|-|-
 S01|赵一|D01|理工
 S02|钱二|D01|理工
 S01|赵一|D01|理工
@@ -253,7 +253,6 @@ digraph graphDB {
   Student4 -> Class2[label="HAS_CLASS\n{G: 78}"];
   Student5 -> Class1[label="HAS_CLASS\n{G: 82}"];
 }
-custom_mark11
 ```
 
 <p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
