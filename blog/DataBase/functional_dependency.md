@@ -33,7 +33,7 @@ $\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y\subset X\,\,\, \text{then}\,\,\,\
 
 ## Non-trivial function dependency
 
-$\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y\not\subset X\,\,\, \text{then}\,\,\,\text{Non-trivial function dependency}$
+$\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y ot\subset X\,\,\, \text{then}\,\,\,\text{Non-trivial function dependency}$
 
 ## Partial/Full function dependency
 
@@ -41,7 +41,7 @@ $\text{if}\,\,\, X\rightarrow Y\,\,\And \,\, Y\not\subset X\,\,\, \text{then}\,\
 
 ## Transfer function dependency
 
-$X\rightarrow Y \And Y \not\rightarrow X \And Y\rightarrow Z$
+$X\rightarrow Y \And Y  ot\rightarrow X \And Y\rightarrow Z$
 
 ## Example
 
@@ -64,7 +64,7 @@ $X\rightarrow Y \And Y \not\rightarrow X \And Y\rightarrow Z$
 
 * 关系模式R中所有属性都是不可分的基本数据项，即不能以集合、序列作为属性值
 * 1NF是关系模式最起码的要求
-* 若$R\not\in 1NF$，则R不是关系数据库
+* 若$R ot\in 1NF$，则R不是关系数据库
 
 S@|SN|SD|DEAN|C@|G
 -|-|-|-|-|-
@@ -161,37 +161,41 @@ D03|逸夫
 <summary></summary>
 custom_mark10
 digraph graphDB {
-	size="6,4"; ratio = fill;
-  edge [color="0.700 0.200 1.000"];
-	node [style=filled];
-  Dept[label="Dept\n{SD: unique value\nDEAN: value}", color="0.0 0.200 1.000"];
-  Student[label="Strudent\n{S@:unique value, \nSN: value}", color="0.650 0.200 1.000"];
-  Class[label="Class\n{C@: unique value}", color="0.50 0.60 0.700"];
+	size="6,4";
+  ratio = fill;
+  edge[color="0.700 0.200 1.000"];
+	node[style=filled];
+  Dept[label="Dept {SD: unique value, DEAN: value}", color="0.0 0.200 1.000"];
+  Student[label="Strudent {S@:unique value, SN: value}", color="0.650 0.200 1.000"];
+  Class[label="Class {C@: unique value}", color="0.50 0.60 0.700"];
   Dept -> Student[label="HAS_STUDENT"];
-  Student -> Class[label="HAS_CLASS\n{G: value}"];
+  Student -> Class[label="HAS_CLASS {G: value}"];
 }
 custom_mark10
 </details>
 
 ### Show Data
 
-```graphviz
+![Alt text](https://g.gravizo.com/source/custom_mark11?https%3A%2F%2Fraw.githubusercontent.com%2FNatureGeorge%2Feigenblog%2Fmaster%2Fblog%2FDataBase%2Ffunctional_dependency.md)
+<details> 
+<summary></summary>
+custom_mark11
 digraph graphDB {
 	size="6,4"; ratio = fill;
   edge [color="0.700 0.200 1.000"];
 	node [style=filled];
-  Dept1[label="Dept\n{SD: D01\nDEAN: 理工}", color="0.0 0.200 1.000"];
-  Dept2[label="Dept\n{SD: D02\nDEAN: 材料}", color="0.0 0.200 1.000"];
-  Dept3[label="Dept\n{SD: D03\nDEAN: 逸夫}", color="0.0 0.200 1.000"];
+  Dept1[label="Dept {SD: D01 DEAN: 理工}", color="0.0 0.200 1.000"];
+  Dept2[label="Dept {SD: D02 DEAN: 材料}", color="0.0 0.200 1.000"];
+  Dept3[label="Dept {SD: D03 DEAN: 逸夫}", color="0.0 0.200 1.000"];
 
-  Student1[label="Strudent\n{S@: S01, \nSN: 赵一}", color="0.650 0.200 1.000"];
-  Student2[label="Strudent\n{S@: S02, \nSN: 钱二}", color="0.650 0.200 1.000"];
-  Student3[label="Strudent\n{S@: S03, \nSN: 孙三}", color="0.650 0.200 1.000"];
-  Student4[label="Strudent\n{S@: S04, \nSN: 李四}", color="0.650 0.200 1.000"];
-  Student5[label="Strudent\n{S@: S05, \nSN: 周五}", color="0.650 0.200 1.000"];
+  Student1[label="Strudent {S@: S01,  SN: 赵一}", color="0.650 0.200 1.000"];
+  Student2[label="Strudent {S@: S02,  SN: 钱二}", color="0.650 0.200 1.000"];
+  Student3[label="Strudent {S@: S03,  SN: 孙三}", color="0.650 0.200 1.000"];
+  Student4[label="Strudent {S@: S04,  SN: 李四}", color="0.650 0.200 1.000"];
+  Student5[label="Strudent {S@: S05,  SN: 周五}", color="0.650 0.200 1.000"];
 
-  Class1[label="Class\n{C@: C01}", color="0.50 0.60 0.700"];
-  Class2[label="Class\n{C@: C02}", color="0.50 0.60 0.700"];
+  Class1[label="Class {C@: C01}", color="0.50 0.60 0.700"];
+  Class2[label="Class {C@: C02}", color="0.50 0.60 0.700"];
 
   Dept1 -> Student1[label="HAS_STUDENT"];
   Dept1 -> Student2[label="HAS_STUDENT"];
@@ -199,11 +203,12 @@ digraph graphDB {
   Dept2 -> Student4[label="HAS_STUDENT"];
   Dept3 -> Student5[label="HAS_STUDENT"];
 
-  Student1 -> Class1[label="HAS_CLASS\n{G: 90}"];
-  Student2 -> Class1[label="HAS_CLASS\n{G: 87}"];
-  Student1 -> Class2[label="HAS_CLASS\n{G: 92}"];
-  Student3 -> Class1[label="HAS_CLASS\n{G: 95}"];
-  Student4 -> Class2[label="HAS_CLASS\n{G: 78}"];
-  Student5 -> Class1[label="HAS_CLASS\n{G: 82}"];
+  Student1 -> Class1[label="HAS_CLASS {G: 90}"];
+  Student2 -> Class1[label="HAS_CLASS {G: 87}"];
+  Student1 -> Class2[label="HAS_CLASS {G: 92}"];
+  Student3 -> Class1[label="HAS_CLASS {G: 95}"];
+  Student4 -> Class2[label="HAS_CLASS {G: 78}"];
+  Student5 -> Class1[label="HAS_CLASS {G: 82}"];
 }
-```
+custom_mark11
+</details>
