@@ -41,3 +41,46 @@ I am confused about the result. Could you please help me figure out this issue?
 
 (2020-02-29)
 ```
+
+### 1ABN
+
+* CA ATOMS ONLY
+
+### 6B6U
+
+* with mutation
+
+### 6OAK
+
+* with modified res
+
+### 6HQU
+
+* ho but he
+
+### 3O77
+
+* in multi organism
+* 17 muta
+
+### 4u6f,4v8z,6n8m,6fs0,1o0e
+
+* with UNK residue
+
+### Contains Hybrid DNA/RNA
+
+* 6ozg
+
+### Best mapped to non canonical seq
+
+* 5EWL (best mapped to A0A1L8F5J9-8)
+
+### Has multi tax
+
+* 5edu
+* 6rz6
+* 6bqh
+
+### Muti tax he
+
+* 6W1D
