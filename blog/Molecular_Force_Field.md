@@ -6,6 +6,11 @@ author: Zefeng Zhu
 
 # Molecular Force Field
 
+> Physicist's view of __Potential Energy of a Protein__
+
+* Describe physical forces
+* Equations may be approximate, but represent identifiable forces
+
 ## Bond Stretching
 
 ### 谐振子函数
@@ -97,11 +102,23 @@ $$E_{12,6}=\varepsilon_{ij}[(\cfrac{r^{0}_{ij}}{r_{ij}})^{12}-2(\cfrac{r^{0}_{ij
 
 $$V_{\text{chg}}=K\cfrac{q_iq_j}{\varepsilon_{0} r_{ij}}, \,K=\cfrac{1}{4\pi}$$
 
-### CHARMm力场
+### CHARMM力场
 
 > Karplus group, 1983
 
-$E=E_s+E_B+\sum_{\phi}$
+$U_{\text{CHARMM}}=U_{\text{bonded}}+U_{\text{non-bonded}}$
+
+$U_{\text{bonded}}=U_{\text{bond}}+U_{\text{angle}}+U_{\text{UB}}+U_{\text{dihedral}}+U_{\text{improper}}+U_{\text{CMAP}}$
+
+$U_{\text{non-bonded}}=U_{\text{LJ}}+U_{\text{elec}}$
+
+$U_{\text{bond}}=\sum_{\text{bonds}}\cfrac{1}{2}k_b(b-b_0)^2$
+
+$U_{\text{angle}}=\sum_{\text{angles}}\cfrac{1}{2}k_{\theta}(\theta-\theta_0)^2$
+
+$U_{\text{UB}}=\sum_{\text{Urey-Bradley}}K_{\text{UB}}(b^{1-3}-b^{1-3,0})^2$
+
+...
 
 ### CVFF力场
 
@@ -127,7 +144,7 @@ $E=E_s+E_B+\sum_{\phi}$
 
 * 蛋白质分子的模拟
   * AMBER
-  * CHARMm
+  * CHARMM
   * CFF
   * CVFF
   * MMFF94
