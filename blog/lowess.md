@@ -108,4 +108,3 @@ ggplot(data=data, aes(x=x, y=y.norm)) +
 1. [📜Wikipedia Local regression](https://en.wikipedia.org/wiki/Local_regression)
 2. [📺StatQuest: Fiitting a curve to data, aka lowess, aka loess](https://www.youtube.com/watch?v=Vf7oJ6z2LCc)
 3. [📺Locally Weighted Regression](https://www.youtube.com/watch?v=TzjGoHb4ecY)
-
