@@ -185,7 +185,7 @@ Noted that:
 
 * $\sum_{u}a_{iu}a_{uj}\le\min(k_i,k_j)-a_{ij}$
 * $\left|N_1(i)\cup N_1(j)\right|\le\min(\left|N_1(i)\right|, \left|N_1(j)\right|)-a_{ij}$
-* $N_!(i)$ denotes the set of 1-step neighbors of node i
+* $N_1(i)$ denotes the set of 1-step neighbors of node i
 * $||$ measures the cardinality
 * Adding 1 to the denominator prevents it from becoming 0
 * Therefore, $0\le a_{ij}\le1$ implies $0\le\text{TOM}_{ij}\le1$

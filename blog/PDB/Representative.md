@@ -100,3 +100,53 @@ The algorithm proceeds as follows:
 * In a final pass over all removed proteins, a protein is reinstated (added to the selected set) if it has no neighbors in the selected set
 
 In principle, this algorithm can be reformulated so as to guarantee the global optimum of the largest number of unrelated  chains, namely by a complete tree search to arbitary depth.
+
+## Enlarged Representative Set of Protein Structures
+
+> Hobohm U, Sander C. Enlarged representative set of protein structures. Protein Sci. 1994;3(3):522‐524. doi:10.1002/pro.5560030317
+
+### Quality Control of Selected Data Sets
+
+The quality goals can are implemented at 3 levels:
+
+* Initial Filter
+* Soft-exclude Flag for marginal data
+* Quality Index $Q=r+R/20$
+  * $r$: resolution
+  * $R$: R-factor (percent)
+  * the one with higher Q is considered to be of lower quality
+
+#### Initial Filter
+
+Eliminate all chains with:
+
+* 100% sequence identity on the entire length to another chain, but lower quality
+* more than 5% of nonstandard or unknown amino acids(UNK)
+* a length of less than 30 residues
+* a resolution worse than 3.5 A
+* an R-factor of more than 30%
+* models not based directly on X-ray or NMR data
+
+> The values for cutoffs were chosen by experience and can be changed to meet special requirements
+
+#### Soft-exclude Flag
+
+Some chains are flagged for preferred exclusion in the subsequent selection procedure. Such chains remain in the list only if no homologous chain exists. These are chains for which:
+
+* the number of residues with sidechain coordinates is less than 90% of the sequence length (e.g backbone-only structure)
+* the number of residues with backbone coordinates is less than 90% of the sequence length (e.g C-α-only structures)
+* the number of alanine plus glycine residues is higher than 40% of the sequence length (e.g structures woth unknown sequence modeled as polyalanine)
+* no data for resolution or R-factor are available
+
+### Selection Procedure
+
+* Algorithm 2
+* when more than 1 protein has the same number of neighbors, quality control and downward compatibility are achieved by preferably removing the data set of lower quality and by preferably keepling chains that have been in a previous list
+  * remove a chain with a soft-exclude flag.(**?** _what if there are two chains with soft-exclude flag. Let the two chains goto the next step?_) If there is no such chain, then
+  * remove the chain with lowest quality. If there is more than 1 chain with the lowest quality, then
+  * remove a chain that has no soft-include flag (chains from a previous list are flagged with a soft-include flag). If there is more than 1 chain left, then
+  * remove a chain with high(**?** means lower?) PDB identifier (i.e., prefer 6TIM over 2TIM). If there is more than 1 chain left
+  * remove a chain with alphabetically higher chain identifier (i.e., prefer 3HLA-A over 3HLA-B)
+* For special requirements it may be necessary to have chains of individual choice in the list. To meet such a requirement, a subset of chains can be flagged with a hard-include flag.
+  * These chains are not removed during the selection procedure, 
+  * and relations between hard-included chains are not considered
