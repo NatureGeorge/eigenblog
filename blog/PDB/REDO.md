@@ -84,3 +84,8 @@ I am confused about the result. Could you please help me figure out this issue?
 ### Muti tax he
 
 * 6W1D
+
+### Wrong Message
+
+* 6ox4
+  * 39个配体分子, 但是pdbe-graph-api(graph db)给出26个, 少了

@@ -12,11 +12,19 @@ author: Zefeng Zhu
 
 > Sequence identity is the amount of characters which match exactly between two different sequences
 
+Having got the alignment by some method, there are many different ways of calculating percentage identity (PID). For example divide the number of identities by:
+
+* length of shortest sequence.
+* length of alignment.
+* arithmetic mean length of sequence.
+* number of non-gap positions.
+* number of equivalenced positions excluding overhangs.
+
 $$\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}$$
 
-OR:
-
 $$\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\text{length}(\text{alignment})}$$
+
+$$\dots$$
 
 * $\text{length}(\text{alignment})$: aligned columns including columns containing a gap in either sequence
 
@@ -31,15 +39,25 @@ $$\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identic
 
 $$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}$$
 
-OR:
-
 $$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\text{length}(\text{alignment})}$$
+
+$$\ldots$$
+
+$$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot(1-\cfrac{\text{edit distance}}{\min(\text{unaligned length})})$$
 
 ### Similarity Score
 
 $$\sum_{i=1}^{l}\sigma(S'[i],T'[i])$$
 
 * $l=|S'|=|T'|$
+
+## Z-Score
+
+> Boberg J, Salakoski T, Vihinen M. Selection of a representative set of structures from Brookhaven Protein Data Bank. Proteins. 1992;14(2):265‐276. doi:10.1002/prot.340140212
+
+> Webber C, Barton GJ. Estimation of P-values for global alignments of protein sequences. Bioinformatics. 2001;17(12):1158‐1167. doi:10.1093/bioinformatics/17.12.1158
+
+...
 
 ## Homology
 
@@ -61,4 +79,7 @@ Note that homology is a binary qualitative measure - either two sequences are ho
 2. <https://snipcademy.com/pairwise-alignment>
 3. <https://courses.cs.washington.edu/courses/cse527/00wi/lectures/lect03.pdf>
 4. <https://github.com/soedinglab/MMseqs2/wiki>
-5. Gusfield, D. (1997). Algorithms on Strings, Trees, and Sequences: Computer Science and Computational Biology. Cambridge: Cambridge University Press. doi:10.1017/CBO9780511574931
+5. <https://openwetware.org/wiki/Wikiomics:Percentage_identity>
+6. Gusfield, D. (1997). Algorithms on Strings, Trees, and Sequences: Computer Science and Computational Biology. Cambridge: Cambridge University Press. doi:10.1017/CBO9780511574931
+7. Boberg J, Salakoski T, Vihinen M. Selection of a representative set of structures from Brookhaven Protein Data Bank. Proteins. 1992;14(2):265‐276. doi:10.1002/prot.340140212
+8. Webber C, Barton GJ. Estimation of P-values for global alignments of protein sequences. Bioinformatics. 2001;17(12):1158‐1167. doi:10.1093/bioinformatics/17.12.1158
