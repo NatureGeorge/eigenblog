@@ -1,9 +1,9 @@
 ---
-title: 计算机辅助药物发现实验03-分子动力学模拟实验
+title: 计算机辅助药物发现实验03: 分子动力学模拟实验
 author: Zefeng Zhu
 date: 2020-04-26 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [computer aided drug design, gromacs]
+tags: [computer-aided-drug-design, gromacs]
 ---
 
 ## 实验过程
