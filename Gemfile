@@ -1,11 +1,17 @@
-# frozen_string_literal: true
+source "https://rubygems.org"
 
-source 'https://gems.ruby-china.com/'
+gem "jekyll", ">=3.8.6"
 
-gemspec
-
+# Official Plugins
 group :jekyll_plugins do
-  gem "jekyll-paginate-v2"
-  gem "jekyll-feed"
-  gem 'jekyll-diagrams'
+  gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
+  gem "jekyll-seo-tag", "~> 2.6.1"
+  gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw]
+  gem "tzinfo",       "1.2.1"
+  gem 'wdm', '>= 0.1.0'
+end
+
+group :test do
+  gem "html-proofer"
 end

@@ -1,0 +1,30 @@
+---
+title: Variant Annotation
+author: Zefeng Zhu
+date: 2020-05-18 08:01:00 +0800
+categories: [Notes, Courses]
+tags: [clinical genomics]
+---
+
+## Minor Allele Frequency
+
+> Minor allele frequency (MAF) is the frequency at which the **second** most common allele occurs in a given population. They play a surprising role in heritability since MAF variants which occur only once, known as "singletons", drive an enormous amount of selection. [1,2]
+
+> MAF is widely used in population genetics studies because it provides information to differentiate between **common and rare variants** in the population. As an example, a 2015 study sequenced the whole genomes of 2,120 Sardinian individuals. The authors classified the variants found in the study in three classes according to their MAF. It was observed that rare variants (MAF < 0.05) appeared more frequently in coding regions than common variants (MAF > 0.05) in this population. [1,3]
+
+One common method of minimizing errors in large DNA sequence datasets is to drop variable sites with a minor allele frequency below some specified threshold. 
+
+### Interpreting MAF data
+
+> From wikipedia
+
+1. Introduce the reference of a SNP of interest, as an example: rs429358, in a database (dbSNP or other).
+
+2. Find MAF/MinorAlleleCount link. MAF/MinorAlleleCount: C=0.1506/754 (1000 Genomes);[4] where C is the minor allele for that particular locus; 0.1506 is the frequency of the C allele (MAF), i.e. 15% within the 1000 Genomes database; and 754 is the number of times this SNP has been observed in the population of the study.
+
+## Reference
+
+1. <https://en.wikipedia.org/wiki/Minor_allele_frequency>
+2. Hernandez RD, Uricchio LH, Hartman K, Ye C, Dahl A, Zaitlen N. Ultrarare variants drive substantial cis heritability of human gene expression. Nat Genet. 2019;51(9):1349‐1355. doi:10.1038/s41588-019-0487-7
+3. Sidore C, Busonero F, Maschio A, et al. Genome sequencing elucidates Sardinian genetic architecture and augments association analyses for lipid and blood inflammatory markers. Nat Genet. 2015;47(11):1272‐1281. doi:10.1038/ng.3368
+4. <https://www.ncbi.nlm.nih.gov/projects/SNP/docs/rs_attributes.html >
