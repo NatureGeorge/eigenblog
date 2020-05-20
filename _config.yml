@@ -130,7 +130,7 @@ defaults:
       breadcrumb:
         -
           label: Home
-          url: /
+          url: /eigenblog
         -
           label: Tags
           url: /tabs/tags/
