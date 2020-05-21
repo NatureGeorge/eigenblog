@@ -3,7 +3,7 @@ title: Proteomics Informatics (Task 4)
 author: Zefeng Zhu
 date: 2020-05-16 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [proteomics informatics]
+tags: [proteomics-informatics]
 ---
 
 ## Basic Information

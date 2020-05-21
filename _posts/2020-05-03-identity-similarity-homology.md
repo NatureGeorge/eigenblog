@@ -3,7 +3,7 @@ title: Sequence Identity & Similarity & Homology
 author: Zefeng Zhu
 date: 2020-05-03 08:30:10 +0800
 categories: [Notes, Research]
-tags: [metrics, sequence identity, sequence similarity, homology]
+tags: [metrics, sequence-identity, sequence-similarity, homology]
 ---
 
 ## Introduction
@@ -22,11 +22,17 @@ Having got the alignment by some method, there are many different ways of calcul
 * number of non-gap positions.
 * number of equivalenced positions excluding overhangs.
 
-$$\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}$$
+$$
+\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}
+$$
 
-$$\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\text{length}(\text{alignment})}$$
+$$
+\text{identity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}}{\text{length}(\text{alignment})}
+$$
 
-$$\dots$$
+$$
+\dots
+$$
 
 * $\text{length}(\text{alignment})$: aligned columns including columns containing a gap in either sequence
 
@@ -39,19 +45,29 @@ $$\dots$$
 
 > On a BLAST search, **similarity** is also known as **positives**.
 
-$$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}$$
+$$
+\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\min(\text{length}(\text{Seq}_{A}), \text{length}(\text{Seq}_{B}))}
+$$
 
-$$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\text{length}(\text{alignment})}$$
+$$
+\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot\cfrac{\text{identical characters}+\text{similar characters}}{\text{length}(\text{alignment})}
+$$
 
-$$\ldots$$
+$$
+\ldots
+$$
 
-$$\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot(1-\cfrac{\text{edit distance}}{\min(\text{unaligned length})})$$
+$$
+\text{similarity}(\text{Seq}_{A}, \text{Seq}_{B})=100\%\cdot(1-\cfrac{\text{edit distance}}{\min(\text{unaligned length})})
+$$
 
 ### Similarity Score
 
-$$\sum_{i=1}^{l}\sigma(S'[i],T'[i])$$
+$$
+\sum_{i=1}^{l}\sigma(S'[i],T'[i])
+$$
 
-* $l=|S'|=|T'|$
+* $l=\lvert S' \rvert=\lvert T' \rvert$
 
 ## Z-Score
 

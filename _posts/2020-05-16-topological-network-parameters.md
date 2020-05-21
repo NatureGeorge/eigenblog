@@ -2,8 +2,8 @@
 title: Topological Network Parameters
 author: Zefeng Zhu
 date: 2020-05-16 13:30:00 +0800
-categories: [Notes]
-tags: [graph theory, metrics]
+categories: [Notes, Courses]
+tags: [graph-theory, metrics]
 ---
 
 ## Connected components

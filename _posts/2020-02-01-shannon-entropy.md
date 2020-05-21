@@ -2,8 +2,8 @@
 title: Introduction to Shannon Entropy
 author: Zefeng Zhu
 date: 2020-02-01 12:01:00 +0800
-categories: [Notes]
-tags: [shannon entropy, information theory, mathematical modelling]
+categories: [Notes, Courses]
+tags: [shannon-entropy, information-theory, mathematical-modelling]
 ---
 
 ## Entropy (Measuring Information)
@@ -179,7 +179,7 @@ graph tree3 {
   * 由于KL divergence是不对称的，有两种最小化
   * 参见图6
 
-![图6](../assets/img/Minimizer-of-KL-Divergence.png)
+![图6](../../assets/img/Minimizer-of-KL-Divergence.png)
 
 ### Reference
 

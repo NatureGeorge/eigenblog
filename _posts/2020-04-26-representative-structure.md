@@ -3,7 +3,7 @@ title: Representative/Non-redundant Data Set
 author: Zefeng Zhu
 date: 2020-04-26 08:30:10 +0800
 categories: [Notes, Research]
-tags: [algorithm, pdb, protein structure]
+tags: [algorithm, pdb, protein-structure]
 ---
 
 ## Selection of representative protein data set

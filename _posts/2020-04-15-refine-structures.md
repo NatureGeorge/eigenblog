@@ -2,8 +2,8 @@
 title: Refine Structures
 author: Zefeng Zhu
 date: 2020-04-15 08:30:10 +0800
-categories: [Notes, Research]
-tags: [protein, pdb, protein structure]
+categories: [Notes, Courses]
+tags: [mit-7.91j, protein, pdb, protein-structure]
 ---
 
 ## Restating question
@@ -33,19 +33,39 @@ Before using the potential energy functions to determine the best structure for 
 
 one dimension: 
 
-$$x_{i}=x_{i-1}-\varepsilon f'(x_{i-1})$$
+$$
+\begin{aligned}
+  x_{i}=x_{i-1}-\varepsilon f'(x_{i-1})
+\end{aligned}
+$$
 
 N dimensions: 
 
-$$\vec{x}_{1}=\vec{x}_{0}-\varepsilon\nabla U_{0}(\vec{x}_{0})$$
+$$
+\begin{aligned}
+  \vec{x}_{1}=\vec{x}_{0}-\varepsilon\nabla U_{0}(\vec{x}_{0})
+\end{aligned}
+$$
 
-$$\nabla U=\left(\cfrac{\partial U}{\partial x_{1}},\ldots,\cfrac{\partial U}{\partial x_{n}}\right)$$
+$$
+\begin{aligned}
+  \nabla U=\left(\cfrac{\partial U}{\partial x_{1}},\ldots,\cfrac{\partial U}{\partial x_{n}}\right)
+\end{aligned}
+$$
 
 Force:
 
-$$F=-\nabla U$$
+$$
+\begin{aligned}
+  F=-\nabla U  
+\end{aligned}
+$$
 
-$$\vec{x}_{1}=\vec{x}_{0}+\varepsilon F_{0}(\vec{x}_{0})$$
+$$
+\begin{aligned}
+  \vec{x}_{1}=\vec{x}_{0}+\varepsilon F_{0}(\vec{x}_{0})
+\end{aligned}
+$$
 
 > each step is moving in the direction of the force
 
@@ -56,11 +76,17 @@ $$\vec{x}_{1}=\vec{x}_{0}+\varepsilon F_{0}(\vec{x}_{0})$$
 * Seeks to simulate the motion of molecules
 * Can escape local minima
 
-$$x(t_i)=x(t_{i-1})+v(t_{i-1})\times(t_i-t_{i-1})$$
+$$
+  x(t_i)=x(t_{i-1})+v(t_{i-1})\times(t_i-t_{i-1})
+$$
 
-$$v(t_i)=v(t_{i-1})+\cfrac{F(t_{i-1})}{m}\times(t_i-t_{i-1})$$
+$$
+v(t_i)=v(t_{i-1})+\cfrac{F(t_{i-1})}{m}\times(t_i-t_{i-1})
+$$
 
-$$v(t_i)=v(t_{i-1})-\cfrac{\nabla U(t_{i-1})}{m}\times(t_i-t_{i-1})$$
+$$
+v(t_i)=v(t_{i-1})-\cfrac{\nabla U(t_{i-1})}{m}\times(t_i-t_{i-1})
+$$
 
 > Short simulations take tremendous computing resources
 
@@ -93,7 +119,9 @@ Acceptance Criteria:
   * Always accept moves that reduce potential
   * Go uphill (higher potential) based on odds ratio
 
-$$\cfrac{P(S_{\text{test}})}{P(S_{n})}=\cfrac{e^{-E_{\text{test}}/\text{kT}}}{Z(T)}/\cfrac{e^{-E_{n}/\text{kT}}}{Z(T)}=e^{-(E_{\text{test}}-E_{n})/\text{kT}}$$
+$$
+\cfrac{P(S_{\text{test}})}{P(S_{n})}=\cfrac{e^{-E_{\text{test}}/\text{kT}}}{Z(T)}/\cfrac{e^{-E_{n}/\text{kT}}}{Z(T)}=e^{-(E_{\text{test}}-E_{n})/\text{kT}}
+$$
 
 > Boltzmann equation
 

@@ -3,7 +3,7 @@ title: Predicting Protein 3D Structure
 author: Zefeng Zhu
 date: 2020-04-15 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [mit-7.91j, protein, prediction, protein structure]
+tags: [mit-7.91j, protein, prediction, protein-structure]
 ---
 
 ## Basic Information

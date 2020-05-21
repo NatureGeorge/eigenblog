@@ -31,7 +31,9 @@ tags: [computer-aided-drug-design]
 > 实证主义, 哥本哈根诠释不认为波函数除了抽象的概念以外有任何真实的存在
 
 $$
-i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi}{\partial x^2} + V \Psi
+\begin{aligned}
+    i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi}{\partial x^2} + V \Psi
+\end{aligned}
 $$
 
 ### the many-worlds interpretation

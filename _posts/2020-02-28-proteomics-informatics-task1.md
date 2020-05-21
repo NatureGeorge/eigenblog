@@ -3,20 +3,20 @@ title: Proteomics Informatics (Task 1)
 author: Zefeng Zhu
 date: 2020-02-28 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [proteomics informatics]
+tags: [proteomics-informatics]
 ---
 
-<script src="../assets/js/ngl.js"></script>
+<script src="../../assets/js/ngl.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var stage_modeller = new NGL.Stage("viewport_modeller");
       var stage_swissModel = new NGL.Stage("viewport_swissModel");
       var stage_superImpose_raw = new NGL.Stage("viewport_superImpose_raw");
       var stage_superImpose_swissModel = new NGL.Stage("viewport_superImpose_swissModel");
-      stage_modeller.loadFile("../assets/data/YP_009724389_1UK3A.B99990001.pdb", {defaultRepresentation: true});
-      stage_swissModel.loadFile("../assets/data/YP_009724389_1UK3A.SWISS-MODEL.pdb", {defaultRepresentation: true});
-      stage_superImpose_raw.loadFile("../assets/data/6lu7A.1uj1A.pdb", {defaultRepresentation: true});
-      stage_superImpose_swissModel.loadFile("../assets/data/6lu7A.pdb.SWISS-MODEL.pdb", {defaultRepresentation: true});
+      stage_modeller.loadFile("../../assets/data/YP_009724389_1UK3A.B99990001.pdb", {defaultRepresentation: true});
+      stage_swissModel.loadFile("../../assets/data/YP_009724389_1UK3A.SWISS-MODEL.pdb", {defaultRepresentation: true});
+      stage_superImpose_raw.loadFile("../../assets/data/6lu7A.1uj1A.pdb", {defaultRepresentation: true});
+      stage_superImpose_swissModel.loadFile("../../assets/data/6lu7A.pdb.SWISS-MODEL.pdb", {defaultRepresentation: true});
       stage_modeller.spinAnimation.axis.set(0, 1, 0);
       stage_swissModel.spinAnimation.axis.set(0, 1, 0);
       stage_superImpose_raw.spinAnimation.axis.set(0, 1, 0);
@@ -69,17 +69,18 @@ tags: [proteomics informatics]
 
 #### Result of `Blastp`
 
-![fig_blastp_2019-nCoV](../assets/img/fig_blastp_2019-nCov.png)
+![fig_blastp_2019-nCoV](../../assets/img/fig_blastp_2019-nCov.png)
 
 可以看到在匹配区域内，二者的序列相似性很高，可以作为同源建模的材料。
 
-```fasta
+```txt
 >lcl|Query_64123:3264-3569 YP_009724389.1 orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]
 SGFRKMAFPSGKVEGCMVQVTCGTTTLNGLWLDDVVYCPRHVICTSEDMLNPNYEDLLIRKSNHNFLVQA
 GNVQLRVIGHSMQNCVLKLKVDTANPKTPKYKFVRIQPGQTFSVLACYNGSPSGVYQCAMRPNFTIKGSF
 LNGSCGSVGFNIDYDCVSFCYMHHMELPTGVHAGTDLEGNFYGPFVDRQTAQAAGTDTTITVNVLAWLYA
 AVINGDRWFLNRFTTTLNDFNLVAMKYNYEPLTQDHVDILGPLSAQTGIAVLDMCASLKELLQNGMNGRT
 ILGSALLEDEFTPFDVVRQCSGVTFQ
+
 >lcl|Query_64123:4217-4233 YP_009724389.1 orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]
 TDTPKGPKVKYLYFIKG
 >lcl|Query_64123:1405-1414 YP_009724389.1 orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]
@@ -90,7 +91,7 @@ Sorted by E-Value/Score/Identity/..., the best region locates in 3264-3569 of YP
 
 Choose the region and create a new file `YP_009724389_1UK3A.ali` for Modeller to use.
 
-```ali
+```txt
 >P1;YP_009724389_1UK3A
 sequence:YP_009724389_1UK3A:::::::0.00: 0.00
 SGFRKMAFPSGKVEGCMVQVTCGTTTLNGLWLDDVVYCPRHVICTSEDMLNPNYEDLLIRKSNHNFLVQA
@@ -138,9 +139,9 @@ a.make()
 
 #### Another way to build the model: SWISS-MODEL auto-modelling
 
-![fig_SWISS-MODEL_2019-nCoV](../assets/img/fig_SWISS-MODEL_2019-nCov.png)
+![fig_SWISS-MODEL_2019-nCoV](../../assets/img/fig_SWISS-MODEL_2019-nCov.png)
 
-![fig_SWISS-MODEL_2019-nCoV_result](../assets/img/fig_SWISS-MODEL_result.png)
+![fig_SWISS-MODEL_2019-nCoV_result](../../assets/img/fig_SWISS-MODEL_result.png)
 
 <table>
     <tr>

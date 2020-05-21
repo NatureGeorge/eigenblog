@@ -3,7 +3,7 @@ title: A Report About Clinical Genome(ClinGen) Resource
 author: Zefeng Zhu
 date: 2020-05-04 08:00:00 +0800
 categories: [Notes, Courses]
-tags: [clinical genomics]
+tags: [clinical-genomics]
 ---
 
 ## Basic Information

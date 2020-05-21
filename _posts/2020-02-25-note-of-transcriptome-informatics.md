@@ -3,7 +3,7 @@ title: Note of Transcriptome Informatics (2020-02-25)
 author: Zefeng Zhu
 date: 2020-02-25 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [transcriptome informatics]
+tags: [transcriptome-informatics]
 ---
 
 ## Data Preprocessing of Hybrid Genechip

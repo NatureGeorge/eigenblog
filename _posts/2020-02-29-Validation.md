@@ -3,7 +3,7 @@ title: Validation of PDB
 author: Zefeng Zhu
 date: 2020-02-29 08:30:10 +0800
 categories: [Notes, Research]
-tags: [protein, pdb, protein structure]
+tags: [protein, pdb, protein-structure]
 ---
 
 ## wwPDB X-ray validation reports

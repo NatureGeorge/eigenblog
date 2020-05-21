@@ -3,8 +3,25 @@ title: Feactures of Mapping Between RefSeq and UniProt
 author: Zefeng Zhu
 date: 2019-08-21 08:30:10 +0800
 categories: [Notes, Research]
-tags: [protein, pdb, protein structure, mapping]
+tags: [protein, pdb, protein-structure, mapping]
 ---
+
+<script src="../../assets/js/ngl.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var stage1 = new NGL.Stage("viewport1");
+      var stage2 = new NGL.Stage("viewport2");
+      stage1.loadFile("../../assets/data/5wsvA.4lzxA_FATCAT.pdb", {defaultRepresentation: true});
+      stage2.loadFile("../../assets/data/5wsvA.4lzxA_MultiProt.pdb").then(function (o) {
+        o.addRepresentation("cartoon", { color: "modelindex" }),
+        o.autoView()
+        });
+      stage1.spinAnimation.axis.set(0, 1, 0);
+      stage1.setSpin(true);
+      stage2.spinAnimation.axis.set(1, 0, 0);
+      stage2.setSpin(true);
+    });
+</script>
 
 ## Example
 
@@ -21,7 +38,7 @@ PDB|{False, False}|{True,True,True}| {False,False}|{True, True}
 
 ### Alignment (e.g)
 
-```clustal
+```txt
 sp|P0C0L4|CO4A_HUMAN      FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDPCPVLDRSMQGGLVGNDETVA
 sp|P0C0L5|CO4B_HUMAN      FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDLSPVIHRSMQGGLVGNDETVA
 NP_001002029              FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDLSPVIHRSMQGGLVGNDETVA
@@ -30,23 +47,7 @@ NP_001002029              FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDLSPVIHRSMQGGLVG
 
 ### Superimpose
 
-  <script src="../assets/js/ngl.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var stage1 = new NGL.Stage("viewport1");
-      var stage2 = new NGL.Stage("viewport2");
-      stage1.loadFile("../assets/data/5wsvA.4lzxA_FATCAT.pdb", {defaultRepresentation: true});
-      stage2.loadFile("../assets/data/5wsvA.4lzxA_MultiProt.pdb").then(function (o) {
-        o.addRepresentation("cartoon", { color: "modelindex" })
-        o.autoView()
-        });
-      stage1.spinAnimation.axis.set(0, 1, 0);
-      stage1.setSpin(true);
-      stage2.spinAnimation.axis.set(1, 0, 0);
-      stage2.setSpin(true);
-    });
-  </script>
-  <table>
+<table>
     <tr>
         <td>
             Superimpose result of FATCAT
@@ -65,7 +66,7 @@ NP_001002029              FVLKVLSLAQEQVGGSPEKLQETSNWLLSQQQADGSFQDLSPVIHRSMQGGLVG
     </tr>
 </table>
 
-```clustal
+```txt
 4LZX:A|PDBID|CHAIN|SEQUENCE      -----ADQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEV
 sp|P0DP24|CALM2_HUMAN            ----MADQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEV
 5WSV:A|PDBID|CHAIN|SEQUENCE      GPGSMADQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEV
@@ -92,9 +93,9 @@ sp|P0DP24|CALM2_HUMAN            LTDEEVDEMIREADIDGDGQVNYEEFVQMMTAK
 document.addEventListener("DOMContentLoaded", function () {
     var stage1 = new NGL.Stage("viewport1");
     var stage2 = new NGL.Stage("viewport2");
-    stage1.loadFile("../assets/data/5wsvA.4lzxA_FATCAT.pdb", {defaultRepresentation: true});
-    stage2.loadFile("../assets/data/5wsvA.4lzxA_MultiProt.pdb").then(function (o) {
-        o.addRepresentation("cartoon", { color: "modelindex" })
+    stage1.loadFile("../../assets/data/5wsvA.4lzxA_FATCAT.pdb", {defaultRepresentation: true});
+    stage2.loadFile("../../assets/data/5wsvA.4lzxA_MultiProt.pdb").then(function (o) {
+        o.addRepresentation("cartoon", { color: "modelindex" }),
         o.autoView()
     });
     stage1.spinAnimation.axis.set(0, 1, 0);

@@ -3,7 +3,7 @@ title: Molecular Force Field
 author: Zefeng Zhu
 date: 2020-04-03 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [computer-aided-drug-design, molecular force field]
+tags: [computer-aided-drug-design, molecular-force-field]
 ---
 
 ## Basic Information
@@ -42,7 +42,7 @@ $E_B=\cfrac{1}{2}k_b(\theta-\theta_0)^2$
 * $\theta$: 键角
 * $k_b$: 键角弯折力常数
 
-> 谐振子模型在偏离平衡位置不大的情况下($10\degree$以内)可以取得很好的结果, 若偏离过度，则该模型预测值与实验值差异较大
+> 谐振子模型在偏离平衡位置不大的情况下($10^\text{o}$以内)可以取得很好的结果, 若偏离过度，则该模型预测值与实验值差异较大
 
 ## Torsion Rotation
 

@@ -3,7 +3,7 @@ title: Proteomics Informatics (Test 1)
 author: Zefeng Zhu
 date: 2020-03-27 13:30:00 +0800
 categories: [Notes, Courses]
-tags: [proteomics informatics]
+tags: [proteomics-informatics]
 ---
 
 ## Requirement 
@@ -25,9 +25,9 @@ tags: [proteomics informatics]
 * 序列搜索工具: BLAST
 * 序列搜索数据库: UniProt
 
-![view](../assets/img/BLAST.png)
+![view](../../assets/img/BLAST.png)
 
-![view](../assets/img/BLAST_Example.png)
+![view](../../assets/img/BLAST_Example.png)
 
 ### Annotate via UniProt
 
@@ -47,7 +47,7 @@ tags: [proteomics informatics]
 * ...
 
 <table><tr>
-<td><img src="../assets/img/UniProt.png" width=900em></td>
+<td><img src="../../assets/img/UniProt.png" width=900em></td>
 </tr></table>
 
 程序性提取可通过:
@@ -55,7 +55,7 @@ tags: [proteomics informatics]
 1. 解析XML或txt格式的条目页面
 2. 调用Retrieve/ID Mapping 的API获取相关列
 
-![view](../assets/img/UniProt_Column.png)
+![view](../../assets/img/UniProt_Column.png)
 
 ### Annotate via PDB (RCSB/PDBe)
 
@@ -69,18 +69,18 @@ tags: [proteomics informatics]
 * 二级结构注释
 * ...
 
-![view](../assets/img/RCSB_Protein_Feature_View.png)
+![view](../../assets/img/RCSB_Protein_Feature_View.png)
 
 <table><tr>
-<td><img src="../assets/img/RCSB_CUSTOM_TABULAR_REPORT_1.png" width=900em></td>
-<td><img src="../assets/img/RCSB_CUSTOM_TABULAR_REPORT_2.png"></td>
+<td><img src="../../assets/img/RCSB_CUSTOM_TABULAR_REPORT_1.png" width=900em></td>
+<td><img src="../../assets/img/RCSB_CUSTOM_TABULAR_REPORT_2.png"></td>
 </tr></table>
 
 可在RCSB的custom tabular report页面自定义且批量提取指定PDB条目的相关功能层面的注释
 
 #### Annotation Example
 
-![view](../assets/img/RCSB_Annotation_Example1.png)
+![view](../../assets/img/RCSB_Annotation_Example1.png)
 
 ### Annotate by others
 
