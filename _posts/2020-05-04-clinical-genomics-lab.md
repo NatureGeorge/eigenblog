@@ -1,5 +1,5 @@
 ---
-title: A Report About Clinical Genome(ClinGen) Resource
+title: Experiment of Clinical Genomics Course
 author: Zefeng Zhu
 date: 2020-05-04 08:00:00 +0800
 categories: [Notes, Courses]

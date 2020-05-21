@@ -16,7 +16,7 @@ description: >-                        # used by seo meta and the atom feed
   Books are trivialities, life alone is great.
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'https://naturegeorge.github.io/eigenblog/'
+url: 'https://naturegeorge.github.io/eigenblog'
 
 author: Zefeng Zhu                  # change to your full name
 
@@ -45,7 +45,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 #--------------------------
 
 # if your site type is Project Pages site, change below value to '/projectname'
-baseurl: ''
+baseurl: '/eigenblog'
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
