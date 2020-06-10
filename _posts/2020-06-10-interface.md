@@ -10,7 +10,10 @@ tags: [protein, interaction, interface, ppi]
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var stage1 = new NGL.Stage("viewport1");
-      stage1.loadFile("../../assets/data/2xqt.pdb1", {defaultRepresentation: true});
+      stage1.loadFile("../../assets/data/2xqt.pdb1", {defaultRepresentation: true}).then(function (o) {
+        o.addRepresentation("cartoon", { color: "modelindex" }),
+        o.autoView()
+        });
       stage1.spinAnimation.axis.set(0, 1, 0);
       stage1.setSpin(true);
     });
@@ -159,7 +162,7 @@ These methods can be classified into four groups based on the question they are 
 <table>
     <tr>
         <td>
-            <div id="viewport1" style="width:20em; height:15em;"></div>
+            <div id="viewport1" style="width:40em; height:15em;"></div>
         </td>
     </tr>
     <tr>
@@ -253,3 +256,67 @@ A not so well-defined type of PPIs is the one formed by disordered proteins.
 
 > Structural aspects, physicochemical properties, affinity, and specificity of binding are diverse across different protein–protein interfaces
 
+Proteins interact through their interfaces. 
+
+* Structural aspects,
+* physicochemical properties, 
+* affinity, 
+* and specificity of binding are diverse across different protein–protein interfaces.
+
+
+> In this section, we review characteristics of protein interfaces and available databases and tools about protein interface properties. For the analysis of binding preferences of proteins, interface regions need to be extracted.
+
+* There are several approaches to find interface regions from 3-dimensional coordinates of a protein complex, such as 
+  * calculating the accessible surface area (ASA) of the residues
+    * If the difference between the ASA of a residue in monomeric state and complex state is greater than a threshold (usually 1 Å2) that residue is labeled to be an interface residue.
+  * calculating the atomic distances
+    * If the distance between any atoms of two residues each from one chain of a protein complex is less than a threshold (usually 4.5 Å) those residues are labeled as contacting.
+
+A list of some available protein interface databases and tools to find interfaces is provided in ...
+
+
+* Physicochemical properties of protein–protein interfaces include structural and chemical properties. These should be examined to understand the nature of the intermolecular interactions. 
+  * For example, the surface area that is buried by the interacting molecules and the nonpolar fraction, 
+  * the hydrogen bonds and the salt bridges across the interface, buried water molecules, the charge distribution and the composition of the interface, 
+  * residue conservation, 
+  * the strength of the interaction, 
+  * flexibility of the interface residues 
+  * and residues that contribute significantly to the free energy of binding (hot spots), 
+  * the shape of the binding interface, 
+  * complementarity of two binding sites, 
+  * and the types of secondary structures are some of the properties of binding sites.
+
+* One of the most **striking** features in protein binding is the energy distribution in the interface region. 
+  * Hot spots in protein interfaces are energetically critical and contribute more to the binding.
+    * These residues can be found experimentally by alanine scanning mutagenesis.
+      * If there is a change in binding affinity, usually a variation in binding energy greater than 2 kcal/mol, when a residue is mutated to alanine then this residue is labeled a hot spot.
+        * As an example to show an interface and hot spot localizations, Ras/Raf1 complex is illustrated in Figure 3, highlighting predicted hot spots(53) in the interface region. 
+      * Although the alanine scanning experiment is invaluable in hot spot identification, the available data deposited in several databases is limited. 
+    * Given these limitations, several predictive methods have been developed which successfully distinguish hot spots from nonhot spots in protein interfaces. 
+      * Computational alanine scanning is one of them.
+      * Other methods include learning-based and molecular dynamics-based approaches
+    * The most discriminative feature in hot spot prediction is the **solvent accessibility**
+      * Usually hot spots are buried and excluded from solvent and found in close proximity to each other.
+    * Some computational methods have been listed in Table 2. 
+  * Hot spots are potential drug targets, and drug molecules have a tendency to bind hot regions in protein interfaces
+
+
+* As to the chemical properties of protein interfaces
+  * aromatic side chains have preference to be in the binding site.
+  * Also, the stability and specificity of protein interactions are highly dependent on the presence of hydrogen bonds, electrostatic interactions, salt bridges, and hydrophobic attractions. 
+  * Although the frequency of seeing disulfide bonds is very low, they contribute to the rigidity and stability of relatively small protein complexes. 
+* Protein interfaces can be divided into core and rim regions where the rim region is more exposed to the solvent. 
+  * Core regions are shown to be more similar to the interior part of the proteins, 
+  * and rim regions are more similar to the protein surface in terms of residue frequency.
+  * Besides, protein binding regions are less flexible than the remaining surface region
+
+* There are differences between interfaces of different types of interactions.
+  * For example, permanent complexes are more hydrophobic compared to transient interfaces.
+  * While interfaces of the obligate ones are more conserved in sequence than the transient ones,
+    * the shape complementarity is less important in transient interactions. 
+  * Hydrophobic interactions are more preferred in obligate complexes, 
+    * while salt bridges and hydrogen bonds are more preferred in transient complexes. 
+  * In globular complexes and receptor–ligand complexes, interfaces are larger than transient and oncogenic interactions.
+
+
+  * Stefin B/papain has a relatively smaller interface area compared to the interface in methylmalonyl-CoA mutase complex. The gap volume index (GV index) between interacting pairs gives some insight about the interface complementarity which is the gap volume between two protein interfaces normalized with the interface area size. A small GV index corresponds to better complementarity. For example, the interface complementarity of methylmalonyl-CoA mutase complex (GV index = 1.65 Å) is higher than stefin B/papain complex (GV index = 2.12 Å). The nonobligate stefin B/papain interface has 7 hydrogen bonds and 105 nonbonded atomic interactions. In the obligate methylmalonyl-CoA mutase interface, 30 hydrogen bonds, 10 salt bridges, and 649 nonbonded atomic interactions are formed.
