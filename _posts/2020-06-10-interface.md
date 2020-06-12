@@ -10,11 +10,7 @@ tags: [protein, interaction, interface, ppi]
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var stage1 = new NGL.Stage("viewport1");
-      stage1.loadFile("../../assets/data/2xqt.pdb1", {defaultRepresentation: true}).then(function (o) {
-        o.addRepresentation("cartoon", { color: "modelindex" }),
-        o.autoView()
-        });
-      stage1.spinAnimation.axis.set(0, 1, 0);
+      stage1.loadFile("../../assets/data/2xqt.cif", {defaultRepresentation: true});
       stage1.setSpin(true);
     });
 </script>
