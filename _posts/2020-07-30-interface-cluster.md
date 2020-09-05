@@ -108,7 +108,7 @@ Here, we present a novel geometry-based approach, named `PatchBag`, for characte
 
 $$
 \begin{aligned}
-\text{PatchBag\_Distance}(P_{1},P_{2})=1-\frac{{P}_{1}{P}_{2}^{T}}{\sqrt{{P}_{1}{P}_{1}^{T}}\sqrt{{P}_{2}{P}_{2}^{T}}},\, (2)
+\text{PatchBag\_Distance}(P_{1},P_{2})=1-\frac{P_{1}P_{2}^{T}}{\sqrt{P_{1}P_{1}^{T}}\sqrt{P_{2}P_{2}^{T}}},\, (2)
 \end{aligned}
 $$
 
