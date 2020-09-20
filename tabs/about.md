@@ -61,7 +61,7 @@ img {
 
 <div>
     <div>
-        <img src="../assets/img/self/20200920210511_light.jpg" width="25%" align="center">
+        <img src="../../assets/img/self/20200920210511_light.jpg" width="25%" align="center">
     </div>
     <div>    
         <h2 id="about-me">About Me</h2>
