@@ -46,6 +46,10 @@ title: About
     display: block;
     padding: 10px 15px;
 }
+img {
+    float: left;
+    margin: 50px;
+}
 </style>
 
 <ul class="selfnav selfnavbar-nav">
@@ -55,8 +59,13 @@ title: About
     <li><a href="https://lilab.jysw.suda.edu.cn/">Group</a></li>
 </ul>
 
-## About Me
-
-I'm an undergraduate student at Soochow University(PRC) major in Bioinformatics/Computational Biology since 2017. 
-
-Currently, I am working on programming and have a thirst for the insight of mathematic modeling, modern statistic and pattern recognition. My involvement in science lays in the study of the effect of mutations on protein 3D structure.
+<div>
+    <div>
+        <img src="../assets/img/self/20200920210511_light.jpg" width="25%" align="center">
+    </div>
+    <div>    
+        <h2 id="about-me">About Me</h2>
+            <p>I'm an undergraduate student at Soochow University(PRC) major in Bioinformatics/Computational Biology since 2017.</p>
+            <p>Currently, I am working on programming and have a thirst for the insight of mathematic modeling, modern statistic and pattern recognition. My involvement in science lays in the study of the effect of mutations on protein 3D structure.</p>
+    </div>
+</div>
