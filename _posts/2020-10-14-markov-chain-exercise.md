@@ -28,7 +28,14 @@ Define State Space $S = \{0, 1, 2, 3\}$
 
 Define Initial State Probability Distribution:
 
-$\{P(\text{State}_{0})=1, P(\text{State}_{1})=0, P(\text{State}_{2})=0,P(\text{State}_{3})=0\}$
+$$
+\begin{aligned}
+    P(\text{State}_{0})&=1, \\
+    P(\text{State}_{1})&=0, \\
+    P(\text{State}_{2})&=0, \\
+    P(\text{State}_{3})&=0
+\end{aligned}
+$$
 
 &emsp;&emsp;&emsp;Set it as a $4\times1$ matrix $A$:
 
