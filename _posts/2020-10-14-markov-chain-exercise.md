@@ -106,7 +106,7 @@ $$
 And Because:
 
 $$
-ME=E-\begin{bmatrix}
+QE=E-\begin{bmatrix}
        1\\
        1\\
        1\\
@@ -237,10 +237,10 @@ ax.set_ylabel("probability")
     </tr>
     <tr>
         <td>
-            Dist Plot
+            Line Plot
         </td>
         <td>
-            Box Plot
+            Heatmap
         </td>
     </tr>
 </table>
