@@ -1,5 +1,5 @@
 ---
-title: Introduction of pdb-profiling
+title: Introduction to pdb-profiling
 author: Zefeng Zhu
 date: 2020-10-14 10:30:40 +0800
 categories: [Notes, Research]
@@ -123,7 +123,24 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 
 ### Asymmetric Unit & Biological Assembly/Unit
 
-
+<table>
+    <tr>
+        <td>
+            <b>Asymmetric unit</b> of 6v6f
+        </td>
+        <td>
+            <b>Biological assembly 1</b> of 6v6f
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img class="display" width="300em" src="https://cdn.rcsb.org/images/structures/v6/6v6f/6v6f_model-1.jpeg" />
+        </td>
+        <td>
+            <img class="display" width="300em" src="https://cdn.rcsb.org/images/structures/v6/6v6f/6v6f_assembly-1.jpeg" />
+        </td>
+    </tr>
+</table>
 
 ## 路在何方: 站在蛋白质位点的视角，有何应用
 
