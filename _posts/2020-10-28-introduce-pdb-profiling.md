@@ -227,16 +227,96 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 <details><summary>Click to view Converted Tabular Format:</summary>
 <p>
 
-UniProt | chain_id | end | entity_id | identifier | identity | is_canonical | name | pdb_end | pdb_id | pdb_start | start | struct_asym_id | unp_end | unp_start
--- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
-P68871 | B | {"author_residue_number":146,"author_insertion_code":"","residue_number":146} | 2 | HBB_HUMAN | 0.99 | TRUE | HBB_HUMAN | 146 | 1a01 | 1 | {"author_residue_number":1,"author_insertion_code":"","residue_number":1} | B | 147 | 2
-P68871 | D | {"author_residue_number":146,"author_insertion_code":"","residue_number":146} | 2 | HBB_HUMAN | 0.99 | TRUE | HBB_HUMAN | 146 | 1a01 | 1 | {"author_residue_number":1,"author_insertion_code":"","residue_number":1} | D | 147 | 2
-P69905 | A | {"author_residue_number":141,"author_insertion_code":"","residue_number":141} | 1 | HBA_HUMAN | 1 | TRUE | HBA_HUMAN | 141 | 1a01 | 1 | {"author_residue_number":1,"author_insertion_code":"","residue_number":1} | A | 142 | 2
-P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_number":141} | 1 | HBA_HUMAN | 1 | TRUE | HBA_HUMAN | 141 | 1a01 | 1 | {"author_residue_number":1,"author_insertion_code":"","residue_number":1} | C | 142 | 2
+<table>
+		<tr>
+			<td>UniProt</td>
+			<td>chain_id</td>
+			<td>end</td>
+			<td>entity_id</td>
+			<td>identifier</td>
+			<td>identity</td>
+			<td>is_canonical</td>
+			<td>name</td>
+			<td>pdb_end</td>
+			<td>pdb_id</td>
+			<td>pdb_start</td>
+			<td>start</td>
+			<td>struct_asym_id</td>
+			<td>unp_end</td>
+			<td>unp_start</td>
+		</tr>
+	<tr>
+		<td>P68871</td>
+		<td>B</td>
+		<td>{"author_residue_number":146,"author_insertion_code":"","residue_number":146}</td>
+		<td>2</td>
+		<td>HBB_HUMAN</td>
+		<td>0.99</td>
+		<td>TRUE</td>
+		<td>HBB_HUMAN</td>
+		<td>146</td>
+		<td>1a01</td>
+		<td>1</td>
+		<td>{"author_residue_number":1,"author_insertion_code":"","residue_number":1}</td>
+		<td>B</td>
+		<td>147</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P68871</td>
+		<td>D</td>
+		<td>{"author_residue_number":146,"author_insertion_code":"","residue_number":146}</td>
+		<td>2</td>
+		<td>HBB_HUMAN</td>
+		<td>0.99</td>
+		<td>TRUE</td>
+		<td>HBB_HUMAN</td>
+		<td>146</td>
+		<td>1a01</td>
+		<td>1</td>
+		<td>{"author_residue_number":1,"author_insertion_code":"","residue_number":1}</td>
+		<td>D</td>
+		<td>147</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P69905</td>
+		<td>A</td>
+		<td>{"author_residue_number":141,"author_insertion_code":"","residue_number":141}</td>
+		<td>1</td>
+		<td>HBA_HUMAN</td>
+		<td>1</td>
+		<td>TRUE</td>
+		<td>HBA_HUMAN</td>
+		<td>141</td>
+		<td>1a01</td>
+		<td>1</td>
+		<td>{"author_residue_number":1,"author_insertion_code":"","residue_number":1}</td>
+		<td>A</td>
+		<td>142</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P69905</td>
+		<td>C</td>
+		<td>{"author_residue_number":141,"author_insertion_code":"","residue_number":141}</td>
+		<td>1</td>
+		<td>HBA_HUMAN</td>
+		<td>1</td>
+		<td>TRUE</td>
+		<td>HBA_HUMAN</td>
+		<td>141</td>
+		<td>1a01</td>
+		<td>1</td>
+		<td>{"author_residue_number":1,"author_insertion_code":"","residue_number":1}</td>
+		<td>C</td>
+		<td>142</td>
+		<td>2</td>
+	</tr>
+</table>
 
 </p>
 </details>
-
 
 <table>
     <tr>
@@ -248,6 +328,7 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
         <td>
             P68871 mapped with 1a01 Chain B
         </td>
+    </tr>
 </table>
 
 
@@ -514,6 +595,8 @@ a same protein (uniprot accession) is present in copies/or is repeated" -- from 
 
 * `new_pdb_range`
 * `new_unp_range`
+
+上面的`new_pdb_range,new_unp_range`两列是程序在判断出`sifts_range_tag,repeated,reversed`后重新计算生成的匹配区域。
 
 
 ### Code to Achieve Your Goal 2
