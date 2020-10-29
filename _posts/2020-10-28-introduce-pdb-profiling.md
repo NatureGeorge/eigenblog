@@ -20,7 +20,7 @@ tags: [pdb, python]
 <table>
     <tr>
         <td>
-            <img src="../assets/img/genome2transcript.drawio.svg">
+            <img src="../../assets/img/genome2transcript.drawio.svg">
         </td>
     </tr>
     <tr>
@@ -78,7 +78,7 @@ NP_001121619.1, NM_001128147.2 [P21359-5]
 
 目前为止是从基因组位点到蛋白质位点(UniProt Isoform层面)的工作。
 
-### Code to Achieve Your Goal
+### Code to Achieve Your Goal 1
 
 ```python
 from pdb_profiling import default_config
@@ -237,10 +237,11 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
 </p>
 </details>
 
+
 <table>
     <tr>
         <td>
-            <img src="../assets/img/unp_map_pdb.drawio.svg">
+            <img src="../../assets/img/unp_map_pdb.drawio.svg">
         </td>
     </tr>
     <tr>
@@ -249,13 +250,14 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
         </td>
 </table>
 
+
 #### Reformated by `pdb-profiling`
 
 * `pdb_range`: 将同一对UniProt Isoform与PDB链的匹配范围整体成区间格式(convert pdb_start&pdb_end to intervel/range format)
 * `unp_range`: 将同一对UniProt Isoform与PDB链的匹配范围整体成区间格式(convert unp_start&unp_end to intervel/range format)
 
+
 <table>
-	<thead>
 		<tr>
 			<td>UniProt</td>
 			<td>is_canonical</td>
@@ -267,7 +269,6 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
 			<td>pdb_range</td>
 			<td>unp_range</td>
 		</tr>
-	</thead>
 	<tr>
 		<td>P21359</td>
 		<td>True</td>
@@ -347,6 +348,7 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
 	</tr>
 </table>
 
+
 #### Detected by `pdb-profiling`
 
 * `sifts_range_tag`
@@ -355,10 +357,16 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
   * `Deletion`
   * `InDel`
 * `reversed`
+  * SIFTS是以PDB Chain Sequence的视角来匹配序列片段，少数情况会有把部分unp序列反向匹配(i.e. P00441 5j0c A)
+  * "5j0c - it the circular permutant structure where authors have swapped the few chunk protein from front and back -(figure 2 in <https://pubs.acs.org/doi/pdf/10.1021/jacs.6b05151>). That's why you see "the head of the UniProt sequence is mapped with the tail of the PDB-Chain sequence" -- from Preeti Choudhary
 * `repeated`
+  * (i.e. Q7KZ85-3 6gmh M)
+  * "In SIFTS, the segment generation is done from PDB point of view, that's why
+you will see continuous pdb ranges. Seldom, in protein structures, you may see
+a same protein (uniprot accession) is present in copies/or is repeated" -- from Preeti Choudhary
+
 
 <table>
-	<thead>
 		<tr>
 			<td>UniProt</td>
 			<td>pdb_id</td>
@@ -371,7 +379,6 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
             <td>reversed</td>
             <td>repeated</td>
 		</tr>
-	</thead>
 	<tr>
 		<td>P21359</td>
 		<td>1nf1</td>
@@ -470,13 +477,47 @@ P69905 | C | {"author_residue_number":141,"author_insertion_code":"","residue_nu
 	</tr>
 </table>
 
+<table>
+    <tr>
+        <td>
+            <img src="../../assets/img/unp_map_pdb_insertion.drawio.svg">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Insertion: P30038-3 mapped with 4oe5 Chain D
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../assets/img/unp_map_pdb_deletion.drawio.svg">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Deletion: Q13303-3 mapped with 1zsx Chain A
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../assets/img/unp_map_pdb_indel.drawio.svg">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            InDel: Q01780 mapped with 6d6q Chain J
+        </td>
+    </tr>
+</table>
+
 #### Fixed by `pdb-profiling`
 
 * `new_pdb_range`
 * `new_unp_range`
 
 
-### Code to Achieve Your Goal
+### Code to Achieve Your Goal 2
+
 
 ```python
 from pdb_profiling import default_config
@@ -504,7 +545,8 @@ df1[df1.select_tag.eq(True)]
 
 这个质量好坏用RAW_BS这一分值表示，越高说明该PDB链与UniProt的匹配理想程度越高；select_rank为按`['RAW_BS', '1/resolution', 'revision_date', 'id_score']`依次排序(然后选RAW_BS高的，一样就看1/resolution，再一样就看revision_date，最后看id_score)。选中了某条链后，还会看排在后面的链的覆盖范围与已经选中的链的覆盖范围的差异(metric采用overlap coefficient)，达到一定阈值(<0.2)就也选定(采用贪婪算法)。因此在结果中，若有多个链的select_tag为true，就是说这些链与该`UniProt Isoform`匹配度相对较好且覆盖`UniProt Isoform`的部分有足够差异，因此都选上。
 
-现在我们有了选定的UniProt Isoform与PDB Chain的对应关系及对应匹配范围信息，将UniProt Isoform上的位点对应上PDB Chain上的residue_number或PDB提交者定义的author_residue_number+author_insertion_code就很简单了，具体参见[这个链接](https://nbviewer.jupyter.org/urls/raw.github.com/NatureGeorge/pdb-profiling/master/examples/unp3d.ipynb)。
+现在我们有了选定的UniProt Isoform与PDB Chain的对应关系及对应匹配范围信息，将UniProt Isoform上的位点对应上PDB Chain上的residue_number或PDB提交者定义的author_residue_number+author_insertion_code就很简单了，具体参见[这个链接](https://nbviewer.jupyter.org/github/NatureGeorge/pdb-profiling/blob/master/examples/unp3d.ipynb#Mapping-Between-Sites-in-UniProt-Isoform-and-PDB-Chain)。
+
 
 ### 补充一下
 
@@ -523,7 +565,9 @@ df1[df1.select_tag.eq(True)]
             * Residue Conformer
               * Atom
 
+
 ### Asymmetric Unit & Biological Assembly/Unit
+
 
 <table>
     <tr>
@@ -543,6 +587,7 @@ df1[df1.select_tag.eq(True)]
         </td>
     </tr>
 </table>
+
 
 ## 路在何方: 站在蛋白质位点的视角，有何应用
 
