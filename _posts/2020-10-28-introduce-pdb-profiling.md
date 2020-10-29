@@ -6,6 +6,22 @@ categories: [Notes, Research]
 tags: [pdb, python]
 ---
 
+<script src="../../assets/js/ngl.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var stage1 = new NGL.Stage("viewport1");
+      var stage2 = new NGL.Stage("viewport2");
+      stage1.loadFile("../../assets/data/4l57_backbone.cif").then(function(comp) {
+			comp.addRepresentation("cartoon", {assembly:"AU"})
+			stage.autoView()});
+      stage2.loadFile("../../assets/data/4l57_backbone.cif").then(function(comp) {
+			comp.addRepresentation("cartoon", {assembly:"BU1"})
+			stage.autoView()});
+      stage1.setSpin(true);
+      stage2.setSpin(true);
+    });
+</script>
+
 ## 预备知识
 
 * `RefSeq`数据资源与`Ensembl`数据资源
@@ -109,11 +125,9 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 
 上述这些要求着我们对UniProt Isoform与PDB链的序列匹配的identity进行把控，同时考虑到missing residues等的影响，选择出与目标UniProt Isoform最匹配的PDB链；同时，考虑到不同PDB链的不同覆盖范围，尽量选择覆盖范围最大的链，并可选择多条链使得这些链尽可能覆盖完整蛋白质，以此来尽多地囊括我们所要研究的位点；此外还需注意位点编号层面的对应。
 
-### About Mapped Range
+### About Mapped Range: From EBI's `SIFTS`
 
 我们下面来界定如下概念，以此来明确PDB文件中位点对应关系
-
-#### From EBI's `SIFTS`
 
 * `pdb_start` & `pdb_end`: PDB链序列中对齐匹配(alignment)的起始位置和结束位置
 * `unp_start` & `unp_end`: UniProt Isoform序列中对齐匹配(alignment)的起始位置和结束位置
@@ -332,7 +346,7 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 </table>
 
 
-#### Reformated by `pdb-profiling`
+### About Mapped Range: Reformated by `pdb-profiling`
 
 * `pdb_range`: 将同一对UniProt Isoform与PDB链的匹配范围整体成区间格式(convert pdb_start&pdb_end to intervel/range format)
 * `unp_range`: 将同一对UniProt Isoform与PDB链的匹配范围整体成区间格式(convert unp_start&unp_end to intervel/range format)
@@ -430,7 +444,7 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 </table>
 
 
-#### Detected by `pdb-profiling`
+### About Mapped Range: Detected by `pdb-profiling`
 
 * `sifts_range_tag`
   * `Safe`
@@ -591,7 +605,7 @@ a same protein (uniprot accession) is present in copies/or is repeated" -- from 
     </tr>
 </table>
 
-#### Fixed by `pdb-profiling`
+### About Mapped Range: Fixed by `pdb-profiling`
 
 * `new_pdb_range`
 * `new_unp_range`
@@ -648,9 +662,9 @@ df1[df1.select_tag.eq(True)]
             * Residue Conformer
               * Atom
 
-
 ### Asymmetric Unit & Biological Assembly/Unit
 
+一pdb_id对应的条目(Entry)中可能会有多条链(Chain)，这些链中SEQRES序列完全一致的属于同一Entity。晶体学家在解析完晶体结构后，提交的PDB文件数据中所有链(蛋白/核酸/配体/碳水化合物/水)分子构成了该PDB条目的asymmetric unit (assembly_id: 0)。作者在提交上述原本的asymmetric unit文件后，也会考虑到自己所结晶出的蛋白质在生物学效应中的聚体形式，利用先验的生物学知识或是软件(i.e. PISA)依据原asymmetric unit文件生成biological assembly：对asymmetric unit中的链选取子集，有时会对部分链进行复制、旋转、位移等操作，生成新的链，并产生新的链-链相互作用。
 
 <table>
     <tr>
@@ -671,6 +685,65 @@ df1[df1.select_tag.eq(True)]
     </tr>
 </table>
 
+<table><tr><td> <b>Asymmetric unit</b> of 3hl2</td><td> <b>Biological assembly 1</b> of 3hl2</td><td> <b>Biological assembly 2</b> of 3hl2</td></tr><tr><td> <img src="https://cdn.rcsb.org/images/structures/hl/3hl2/3hl2_model-1.jpeg" data-loaded="true"></td><td> <img src="https://cdn.rcsb.org/images/structures/hl/3hl2/3hl2_assembly-1.jpeg" data-loaded="true"></td><td> <img src="https://cdn.rcsb.org/images/structures/hl/3hl2/3hl2_assembly-2.jpeg" data-loaded="true"></td></tr></table>
+
+<table><tr><td> <b>Asymmetric unit</b> of 2q4n</td><td> <b>Biological assembly 1</b> of 2q4n</td></tr><tr><td> <img src="https://cdn.rcsb.org/images/structures/q4/2q4n/2q4n_model-1.jpeg" data-loaded="true"></td><td> <img src="https://cdn.rcsb.org/images/structures/q4/2q4n/2q4n_assembly-1.jpeg" data-loaded="true"></td></tr></table>
+
+### Code to Achieve Your Goal 3
+
+`pdb-profiling`也同时可以输出二元链链相互作用数据。对于蛋白-蛋白相互作用，其同时整合了`PISA`给出的interacting interface信息以及`Interactome3D`给出的二元相互作用数据。需要注意到，这些对应数据并不局限于asymmetric unit，不同biological assembly中的相互作用可能存在差异，`pdb-profiling`都给出。
+
+```python
+df2 = demo.pipe_select_ho(run_as_completed=True, progress_bar=tqdm).result()
+# NOTE: df2里的所有结果是该UniProt匹配上的所有同聚体相互作用链；每一行就是一对相互作用 (同属于一个蛋白的两条链相互作用)
+# NOTE: 程序推荐的是i_select_tag为True的，根据一系列打分排名; 同时考虑了interface覆盖范围，尽多选择各种类型同聚体相互作用结构
+df3 = demo.pipe_select_he(run_as_completed=True, progress_bar=tqdm).result()
+# NOTE: df3里的所有结果是该UniProt匹配上的所有异聚体相互作用链；每一行就是一对相互作用 (属于两个不同个蛋白的两条链相互作用)；
+# NOTE: 程序推荐的是i_select_tag为True的，根据一系列打分排名; 同时考虑了interface覆盖范围，尽多选择同一对异聚体相互作用下的各种相互作用结构
+# NOTE: 输入的UniProt Isoform可能是UniProt_1也可能是UniProt_2
+# NOTE: 同一对异聚体相互作用可用i_group认定
+```
+
+下面是对结果列名的一些解释:
+
+* `_1`: denoted as the partner chain 1
+* `_2`: denoted as the partner chain 2
+* `assembly_id`
+    * 0 stands for asymmetric unit
+    * 1 stands for biological assembly 1 
+    * 2 stands for biological assembly 2
+    * and so on
+    * for *what is asymmetric unit & biological assembly?* please [click the link](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/biological-assemblies)
+* `model_id`: the model ID of the chain in the corresponding biological assembly PDB format file
+    * 0 denoted as the first model
+* `unp_range_DSC`: the Dice Similarity Coefficient of `new_unp_range_1` & `new_unp_range_2`
+* `interface_range_1`: the range of the interaction's interface in the aspect of partner1 chain (Index from 1)
+* `interface_range_2`: the range of the interaction's interface in the aspect of partner2 chain (Index from 1)
+* `unp_interface_range_1`: the range of the interaction's interface in the aspect of partner1 chain (mapped to the UniProt Isoforom)
+* `unp_interface_range_2`: the range of the interaction's interface in the aspect of partner2 chain (mapped to the UniProt Isoforom)
+* `i_select_tag`: whether in the recommanded interaction representative set
+* `i_select_rank`: the rank among all the interacting-chains (1st denoted as the best)
+* `in_i3d`: 判断这一PPI是否在`Interactome3D`数据集中(UniProt Entry相互作用以及对应biological assembly、model的PDB Chain相互作用都在数据集中才为True)
+* `i_group`: the Heteromeric Interaction Group
+
+<table>
+    <tr>
+        <td>
+            <b>Asymmetric unit</b> of 4l57
+        </td>
+        <td>
+           <b>Biological assembly 1</b> of 4l57
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="viewport1" style="width:20em; height:15em;"></div>
+        </td>
+        <td>
+            <div id="viewport2" style="width:20em; height:15em;"></div>
+        </td>
+    </tr>
+</table>
 
 ## 路在何方: 站在蛋白质位点的视角，有何应用
 
