@@ -13,10 +13,10 @@ tags: [pdb, python]
       var stage2 = new NGL.Stage("viewport2");
       stage1.loadFile("../../assets/data/4l57_backbone.cif").then(function(comp) {
 			comp.addRepresentation("cartoon", {assembly:"AU"})
-			stage.autoView()});
+			,stage.autoView()});
       stage2.loadFile("../../assets/data/4l57_backbone.cif").then(function(comp) {
 			comp.addRepresentation("cartoon", {assembly:"BU1"})
-			stage.autoView()});
+			,stage.autoView()});
       stage1.setSpin(true);
       stage2.setSpin(true);
     });
