@@ -747,4 +747,43 @@ df3 = demo.pipe_select_he(run_as_completed=True, progress_bar=tqdm).result()
 
 ## 路在何方: 站在蛋白质位点的视角，有何应用
 
-...
+### Concept
+
+* $\Delta G_{\text{mut}}$
+* $\Delta G_{\text{wild}}$
+* $\Delta\Delta G$
+* Stability
+* Binding Affinity
+* Disease phenotype predicted by Large-Scle-Study v.s. Molecular phenotype prediction
+
+<table>
+    <tr>
+        <td>
+            <img src="../../assets/img/delta_delta_G.drawio.svg">
+        </td>
+        <td>
+            <img src="../../assets/img/delta_delta_g_b.drawio.svg">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DDG of Stability for Monomeric protein
+        </td>
+        <td>
+            DDG of Binding Affinity for Homomeric/Heteromeric protein
+        </td>
+    </tr>
+</table>
+
+### Material
+
+* Mutations
+* Protein tertiary structures
+
+### Method
+
+* `FoldX`
+* `MCSM (stability)`
+* `MCSM PPI`
+* `pdb-profiling`
+
