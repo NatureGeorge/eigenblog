@@ -235,7 +235,7 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
     }
 }
 ```
-</p>
+
 </details>
 
 <details><summary>Click to view Converted Tabular Format:</summary>
@@ -329,7 +329,6 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 	</tr>
 </table>
 
-</p>
 </details>
 
 <table>
@@ -456,9 +455,7 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
   * "5j0c - it the circular permutant structure where authors have swapped the few chunk protein from front and back -(figure 2 in <https://pubs.acs.org/doi/pdf/10.1021/jacs.6b05151>). That's why you see "the head of the UniProt sequence is mapped with the tail of the PDB-Chain sequence" -- from Preeti Choudhary
 * `repeated`
   * (i.e. Q7KZ85-3 6gmh M)
-  * "In SIFTS, the segment generation is done from PDB point of view, that's why
-you will see continuous pdb ranges. Seldom, in protein structures, you may see
-a same protein (uniprot accession) is present in copies/or is repeated" -- from Preeti Choudhary
+  * "In SIFTS, the segment generation is done from PDB point of view, that's why you will see continuous pdb ranges. Seldom, in protein structures, you may see a same protein (uniprot accession) is present in copies/or is repeated" -- from Preeti Choudhary
 
 
 <table>
