@@ -135,7 +135,6 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 注意，上述起始/结束位置都是从1开始计数的位点索引；对于PDB链序列即为该链的[SEQRES](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format#:~:text=Each%20PDB%20formatted%20file%20includes%20%22SEQRES%20records%22%20,standard%20or%20%20modified%20amino%20acids%20or%20nucleotides.)完整序列的位置索引(即residue_number)，与author_residue_number无关。
 
 <details><summary>Click to view Raw JSON data:</summary>
-<p>
 
 ```json
 {
@@ -239,7 +238,6 @@ print(f"UniProt Entry: {entry}, UniProt Isoform: {isoform}")
 </details>
 
 <details><summary>Click to view Converted Tabular Format:</summary>
-<p>
 
 <table>
 		<tr>
