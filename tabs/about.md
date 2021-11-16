@@ -61,7 +61,7 @@ title: About
 
 <div>
     <div>
-        <img class="selfimg" src="../../assets/img/self/20200920210511_light.jpg" width="25%" align="center">
+        <img class="selfimg" src="../../assets/img/self/cov.png" width="25%" align="center">
     </div>
     <div>    
         <h2 id="about-me">About Me</h2>
